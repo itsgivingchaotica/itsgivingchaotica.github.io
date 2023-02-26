@@ -10,6 +10,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import Confetti from 'react-confetti';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck, faXmark, faPenToSquare, faTrashCan, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import "react-datepicker/dist/react-datepicker.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -131,17 +133,67 @@ function App() {
   return (
     
     <div className="container App">
+    
     <br /><br />
     <h2 className="font">To Do!</h2>
     <br /><br />
+    <br /><br />
+    <Form>
+      <AddTaskForm newTask={newTask} setNewTask={setNewTask} addTask={addTask} date={date} setDate={setDate} currentColor={currentColor} setCurrentColor={setCurrentColor} isExpanded={isExpanded}/>
+    </Form>
+    <Container>
+    {showConfetti ? <Confetti/> : null}
+    <br></br>
+    <div className="emptytask">
+    {toDo && toDo.length ? '' : 'Let\'s get started!'} 
+    </div>
+    <Row>
+    <Col>
+      <ToDoList toDo={toDo} setIsExpanded={setIsExpanded} isExpanded={isExpanded} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} setIndex={setIndex} date={date} currentColor={currentColor} setCurrentColor={setCurrentColor}/>
+    </Col>
+    {!isExpanded ? null : (
+      <Col>
+      <Container className="background">
+        <Row> 
+          <Col className="sidebar">
+          <p className="subtaskBanner">Update and Add Subtasks</p>
+          <UpdateForm toDo={toDo} updateData={updateData} changeTask={changeTask} updateTask={updateTask} cancelUpdate={cancelUpdate} index={index} setCurrentColor2={setCurrentColor2} currentColor2={currentColor2}/>
+          <Form>
+            <AddSubtaskForm newSubtask={newSubtask} setNewSubtask={setNewSubtask} addSubtask={addSubtask} index={index} setIsExpanded={setIsExpanded}/>
+            {/* instead of adding task, we had subtask */}
+          </Form>
+          {toDo[index].subtask.map((e, i) => { 
+            return ( 
+            <div background-color="red">
+              <Subtask
+                key={e.id}
+                subIndex={i}
+                subtask={e}
+                setNewSubtask={setNewSubtask}
+                addSubtask={addSubtask}
+                newSubtask={newSubtask}
+                toDoIndex={index}
+                deleteSubtasks={deleteSubtasks}
+              />
+           </div>
+            )})
+          }
+          </Col>  
+        </Row>
+      </Container>
+    </Col>
+    )}
+    </Row>
+    </Container>
+    <br></br>
+    <br></br>
     <Accordion>
       <Accordion.Item eventKey="0" className="pretty">
         <Accordion.Header><b>So... how do I work this thing?</b></Accordion.Header>
         <Accordion.Body>
-          It's actually pretty easy. Write down your task, pick a theme color, and choose a Due Date! The customization of the theme is completely up to you. <br></br>
-          You can even make subtasks. Simply press the "write" (pencil) icon to make an update to the task theme and title (must be edited together) or add and delete subtasks. Press the "write" icon again to exit the sidebar. <br></br>
-          You may mark tasks done, or if you made a mistake and want to relist the item, simply click the checkmark button again to redo your task.<br></br>
-          You may also delete the tasks and subtasks by utilizing the trashcan icon. 
+          It's actually pretty easy. Write down your task, pick a theme color, and choose a Due Date! Add the task by pressing <FontAwesomeIcon icon={faSquarePlus}/>. The customization of the theme is completely up to you. <br></br>
+          You can even make subtasks. Simply press the "write" <FontAwesomeIcon icon={faPenToSquare}/> icon to make an update to the task theme and/or title or add/delete subtasks. You may also delete <FontAwesomeIcon icon={faTrashCan}/> main tasks when the sidebar is toggled. Press the "write" icon again to exit the sidebar. If you want to cancel a main task update, simply press <FontAwesomeIcon icon={faXmark}/> in the sidebar <br></br>
+          You may mark tasks done <FontAwesomeIcon icon={faCircleCheck}/>, or if you made a mistake and want to relist the item, simply click the checkmark button again to redo your task.<br></br>
           Now, go get productive! 
         </Accordion.Body>
       </Accordion.Item>
@@ -203,54 +255,6 @@ Font Awesome for icons<br></br>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
-    <br /><br />
-    <Form>
-      <AddTaskForm newTask={newTask} setNewTask={setNewTask} addTask={addTask} date={date} setDate={setDate} currentColor={currentColor} setCurrentColor={setCurrentColor} isExpanded={isExpanded}/>
-    </Form>
-    <Container>
-    {showConfetti ? <Confetti/> : null}
-    <br></br>
-    <div className="emptytask">
-    {toDo && toDo.length ? '' : 'Let\'s get started!'} 
-    </div>
-    <Row>
-    <Col>
-      <ToDoList toDo={toDo} setIsExpanded={setIsExpanded} isExpanded={isExpanded} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} setIndex={setIndex} date={date} currentColor={currentColor} setCurrentColor={setCurrentColor}/>
-    </Col>
-    {!isExpanded ? null : (
-      <Col>
-      <Container className="background">
-        <Row> 
-          <Col className="sidebar">
-          <p className="subtaskBanner">Update and Add Subtasks</p>
-          <UpdateForm toDo={toDo} updateData={updateData} changeTask={changeTask} updateTask={updateTask} cancelUpdate={cancelUpdate} index={index} setCurrentColor2={setCurrentColor2} currentColor2={currentColor2}/>
-          <Form>
-            <AddSubtaskForm newSubtask={newSubtask} setNewSubtask={setNewSubtask} addSubtask={addSubtask} index={index} setIsExpanded={setIsExpanded}/>
-            {/* instead of adding task, we had subtask */}
-          </Form>
-          {toDo[index].subtask.map((e, i) => { 
-            return ( 
-            <div background-color="red">
-              <Subtask
-                key={e.id}
-                subIndex={i}
-                subtask={e}
-                setNewSubtask={setNewSubtask}
-                addSubtask={addSubtask}
-                newSubtask={newSubtask}
-                toDoIndex={index}
-                deleteSubtasks={deleteSubtasks}
-              />
-           </div>
-            )})
-          }
-          </Col>  
-        </Row>
-      </Container>
-    </Col>
-    )}
-    </Row>
-    </Container>
     </div>
   );
 }

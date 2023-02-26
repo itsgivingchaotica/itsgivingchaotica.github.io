@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import DatePicker from "react-datepicker";
 import { TwitterPicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSquarePlus} from '@fortawesome/free-solid-svg-icons';
+import { faSquarePlus } from '@fortawesome/free-solid-svg-icons';
 import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-datepicker/dist/react-datepicker.css";
