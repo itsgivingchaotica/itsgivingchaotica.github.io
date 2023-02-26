@@ -28,7 +28,7 @@ body {
   color: var(--space-cadet);
 }
 
-.taskBg div {
+.task div {
   display: flex;
   align-items: center;
   border-bottom: black;
@@ -54,34 +54,34 @@ body {
   width: 100%;
 }
 
-.taskBg .done .taskText {
+.task .done .taskText {
   text-decoration: line-through;
   opacity: 0.3;
   flex: 1;
 }
 task box scale to fit word
-.taskBg .taskText {
+.task .taskText {
   flex: 1;
 }
 
-.taskBg .done .taskText {
+.task .done .taskText {
   text-decoration: line-through;
   opacity: 0.3;
 }
 
-.taskBg .taskDate{
+.task .taskDate{
   margin-left:auto;
     border: 3px solid green;
 }
-.taskBg .hideTaskDate {
+.task .hideTaskDate {
   visibility: hidden;
 }
 
-.taskBg .urgent{
+.task .urgent{
   border:red;
 }
 
-.taskBg .wrap {
+.task .wrap {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -90,20 +90,20 @@ task box scale to fit word
   display: inline-block;
 }
 
-.taskBg .wrap span {
+.task .wrap span {
   display: inline-block;
   margin: 0px 10px 0px 10px;
   cursor: pointer;
   color: purple;
 }
 
-.taskBg .wrap .green:hover {
+.task .wrap .green:hover {
   color: green;
 }
-.taskBg .wrap .yellow:hover {
+.task .wrap .yellow:hover {
   color: yellow;
 }
-.taskBg .wrap .red:hover {
+.task .wrap .red:hover {
   color: red;
 }
 

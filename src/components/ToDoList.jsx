@@ -35,7 +35,7 @@ const ToDoList = ({
         <Form>
         <div>
           <Row>
-            <Col className = "taskBg" style={{backgroundColor: task.background }}>
+            <Col className = "task" style={{backgroundColor: task.background }}>
             <div className = {task.status ? 'done' : ''}>
               <span className="taskNumber">{index+1}</span>
               <span className="taskText">{task.title}</span>
