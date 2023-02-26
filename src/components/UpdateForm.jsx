@@ -16,7 +16,8 @@ const UpdateForm = ({
   cancelUpdate, 
   index, 
   currentColor2, 
-  setCurrentColor2 
+  setCurrentColor2,
+  setIsExpanded
 }) => {
 
     return(
@@ -24,12 +25,13 @@ const UpdateForm = ({
   <Form.Group className="mb-3" controlId="formBasicEmail">
       <br></br>
       <Row> 
-      <ColorPicker currentColor2={currentColor2} setCurrentColor2={setCurrentColor2}/>
-      <br></br>
+      
+      
       <Col className="inputToDo">
         <Form.Control placeholder="Update task" 
           value={ updateData && updateData.title}
           onChange={ (e) => changeTask(e) } />
+          
         <span> 
       <Button variant="primary" type="submit" onClick={() => updateTask(index)}>
         <span>
@@ -43,6 +45,8 @@ const UpdateForm = ({
         </Button>
       </Col>
         </Row>
+        <ColorPicker currentColor2={currentColor2} setCurrentColor2={setCurrentColor2}/>
+      <br></br>
       </Form.Group>
     )
 }

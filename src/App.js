@@ -225,7 +225,7 @@ Font Awesome for icons<br></br>
           <UpdateForm toDo={toDo} updateData={updateData} changeTask={changeTask} updateTask={updateTask} cancelUpdate={cancelUpdate} setIsExpanded={setIsExpanded} index={index} setCurrentColor2={setCurrentColor2} currentColor2={currentColor2}/>
           <Form>
           
-            <AddSubtaskForm newSubtask={newSubtask} setNewSubtask={setNewSubtask} addSubtask={addSubtask} index={index}/>
+            <AddSubtaskForm newSubtask={newSubtask} setNewSubtask={setNewSubtask} addSubtask={addSubtask} index={index} setIsExpanded={setIsExpanded}/>
             {/* instead of adding task, we had subtask */}
           </Form>
           {toDo[index].subtask.map((e, i) => { 

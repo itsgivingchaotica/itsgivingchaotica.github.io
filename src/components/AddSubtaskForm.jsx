@@ -13,12 +13,12 @@ const AddSubtaskForm = ({
   newSubtask, 
   setNewSubtask, 
   addSubtask, 
-  index 
+  index,
+  setIsExpanded 
 }) => {
     return(
         <>
     <Form.Group className="mb-3 shadow rounded" controlId="formBasicPassword">
-    
       <Row>
       <Col className="inputToDo">
       <Form.Control placeholder="Add subtask !!" value={newSubtask} onChange={(e) => setNewSubtask( e.target.value)}/>
@@ -26,6 +26,9 @@ const AddSubtaskForm = ({
           <span>
                 <FontAwesomeIcon icon={faSquarePlus} onClick={() => addSubtask(index)}/>
           </span>
+        </Button>
+        <Button variant="secondary" onClick={ () => setIsExpanded()}>
+          Toggle Sidebar
         </Button>
       </Col>
       </Row>
