@@ -136,13 +136,13 @@ function App() {
     <br /><br />
     <Accordion>
       <Accordion.Item eventKey="0" className="pretty">
-        <Accordion.Header><b>How do I work this thing?</b></Accordion.Header>
+        <Accordion.Header><b>So... how do I work this thing?</b></Accordion.Header>
         <Accordion.Body>
           It's actually pretty easy. Write down your task, pick a theme color, and choose a Due Date! The customization of the theme is completely up to you. <br></br>
-          You can even make subtasks. Simply press the "write" button to make an update to the task theme and title (must be edited together) or add and delete subtasks. Press the "write" key again to exit the sidebar. <br></br>
-          You may mark tasks done, or if you made a mistake and want to relist the item, simply click button again to unslash your task.<br></br>
-          You may also delete the tasks by utilizing the trashcan button.
-          Now get productive! 
+          You can even make subtasks. Simply press the "write" (pencil) icon to make an update to the task theme and title (must be edited together) or add and delete subtasks. Press the "write" icon again to exit the sidebar. <br></br>
+          You may mark tasks done, or if you made a mistake and want to relist the item, simply click the checkmark button again to redo your task.<br></br>
+          You may also delete the tasks and subtasks by utilizing the trashcan icon. 
+          Now, go get productive! 
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1" className="pretty">
