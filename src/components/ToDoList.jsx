@@ -28,9 +28,6 @@ const ToDoList = ({
       return(
 
         <React.Fragment key={task.id}>
-        <br></br>
-        <br></br>
-        <br></br>
         <>
         <Form>
         <div>
@@ -51,9 +48,10 @@ const ToDoList = ({
                 <FontAwesomeIcon icon={faPenToSquare}/>
               </span>
               )}
-              <span className = "red">
+              {isExpanded ? null : (<span className = "red">
                 <FontAwesomeIcon icon={faTrashCan} onClick={()=> {deleteTask(task.id)}}/>
-              </span>
+              </span>)}
+              
             </div>
             </Col>
           </Row>

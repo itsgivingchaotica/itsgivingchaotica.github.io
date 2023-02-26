@@ -31,7 +31,7 @@ function App() {
     const toggle = useCallback(() => setState(state=>!state),[]);
       return [state,toggle];
   }
-
+  //toggle sidebar
   const [isExpanded, setIsExpanded] = useToggle();
 
   // add a subtask to task
@@ -43,7 +43,7 @@ function App() {
           status: false
         };
         const taskListCopy = [...toDo];
-        taskListCopy[taskIndex].subtask.push(sublist);
+        taskListCopy[taskIndex].subtask?.push(sublist);
         setToDo(taskListCopy);
         setNewSubtask('');
   } 
@@ -69,7 +69,7 @@ function App() {
 
   const deleteSubtasks = (subId,index) => {
   const tasksCopy = [...toDo];
-    tasksCopy[index].subtask.splice(subId,1);
+    tasksCopy[index].subtask?.splice(subId,1);
     setToDo(tasksCopy);
   }
   // mark task completed
@@ -84,7 +84,7 @@ function App() {
     setShowConfetti(true);
     setToDo(newTask);
   }
-
+  //confetti celebration effect
   useEffect(() => {
     const timeId = setTimeout(() => {
       // After 8 seconds set the show value to false
@@ -193,7 +193,7 @@ I looked to several stack overflow questions to understand how to map the to-do 
 <a href="https://usehooks.com/useToggle/">https://usehooks.com/useToggle/</a><br></br>
 <a href="https://stackoverflow.com/questions/57212032/how-to-avoid-react-hook-usestate-to-share-the-states">https://stackoverflow.com/questions/57212032/how-to-avoid-react-hook-usestate-to-share-the-states</a><br></br>
 <a href="https://www.youtube.com/watch?v=nmLhEj2IZH4">https://www.youtube.com/watch?v=nmLhEj2IZH4</a><br></br>
-<a href="https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js" text-decoration="none">https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js</a><br></br>
+<a href="https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js">https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js</a><br></br>
 <br></br>
 Font Awesome for icons<br></br>
 <a href="https://fontawesome.com">https://fontawesome.com</a>
@@ -222,9 +222,9 @@ Font Awesome for icons<br></br>
       <Container className="background">
         <Row> 
           <Col className="sidebar">
-          <UpdateForm toDo={toDo} updateData={updateData} changeTask={changeTask} updateTask={updateTask} cancelUpdate={cancelUpdate} setIsExpanded={setIsExpanded} index={index} setCurrentColor2={setCurrentColor2} currentColor2={currentColor2}/>
+          <p className="subtaskBanner">Update and Add Subtasks</p>
+          <UpdateForm toDo={toDo} updateData={updateData} changeTask={changeTask} updateTask={updateTask} cancelUpdate={cancelUpdate} index={index} setCurrentColor2={setCurrentColor2} currentColor2={currentColor2}/>
           <Form>
-          
             <AddSubtaskForm newSubtask={newSubtask} setNewSubtask={setNewSubtask} addSubtask={addSubtask} index={index} setIsExpanded={setIsExpanded}/>
             {/* instead of adding task, we had subtask */}
           </Form>

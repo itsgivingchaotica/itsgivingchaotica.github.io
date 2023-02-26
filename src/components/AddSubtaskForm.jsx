@@ -21,13 +21,13 @@ const AddSubtaskForm = ({
     <Form.Group className="mb-3 shadow rounded" controlId="formBasicPassword">
       <Row>
       <Col className="inputToDo">
-      <Form.Control placeholder="Add subtask !!" value={newSubtask} onChange={(e) => setNewSubtask( e.target.value)}/>
+      <Form.Control className="glow" placeholder="Add subtask !!" value={newSubtask} onChange={(e) => setNewSubtask( e.target.value)}/>
       <Button variant="success">
           <span>
                 <FontAwesomeIcon icon={faSquarePlus} onClick={() => addSubtask(index)}/>
           </span>
         </Button>
-        <Button variant="secondary" onClick={ () => setIsExpanded()}>
+        <Button variant="secondary" onClick={() => !setIsExpanded()}>
           Toggle Sidebar
         </Button>
       </Col>

@@ -17,7 +17,6 @@ const UpdateForm = ({
   index, 
   currentColor2, 
   setCurrentColor2,
-  setIsExpanded
 }) => {
 
     return(
@@ -25,8 +24,6 @@ const UpdateForm = ({
   <Form.Group className="mb-3" controlId="formBasicEmail">
       <br></br>
       <Row> 
-      
-      
       <Col className="inputToDo">
         <Form.Control placeholder="Update task" 
           value={ updateData && updateData.title}

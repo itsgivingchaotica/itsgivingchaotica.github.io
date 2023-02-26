@@ -29,10 +29,10 @@ const AddTaskForm = ({
       <Row >
       <Col className="inputToDo">
       
-      <Form.Control placeholder="Add task, queen :)" value={newTask} onChange={(e) => setNewTask( e.target.value)}/>
+      <Form.Control className="glow" placeholder="Add task, queen :) " value={newTask} onChange={(e) => setNewTask( e.target.value)}/>
       <Button variant="success">
           <span>
-                <FontAwesomeIcon icon={faSquarePlus} onClick={addTask}/>
+                <FontAwesomeIcon icon={faSquarePlus} onClick={() => addTask()}/>
           </span>
         </Button>
         <DatePicker 
