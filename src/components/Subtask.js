@@ -18,7 +18,7 @@ const Subtask = ({
         <>
         <div>
           <Row>
-            <Col className = "taskBg">
+            <Col className = "backgroundTask">
             <div className = {subtask.status ? 'done' : ''}>
               <span className="taskNumber">{subIndex+1}</span>
               <span className="taskText">{subtask.subtaskTitle}</span>
