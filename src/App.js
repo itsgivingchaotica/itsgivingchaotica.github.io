@@ -148,7 +148,58 @@ function App() {
       <Accordion.Item eventKey="1" className="pretty">
         <Accordion.Header>References</Accordion.Header>
         <Accordion.Body>
-          References go here
+        <div className="noTextDec">
+          References: 
+Gordon, Zac. React Explained: Your Step-by-Step Guide to React. OS Training, 2020. <br></br>
+Confetti effect Component: <br></br>
+<a href="https://www.youtube.com/watch?v=8VGIsLF5LCw">https://www.youtube.com/watch?v=8VGIsLF5LCw</a> <br></br>
+<a href="https://www.npmjs.com/package/react-confetti">https://www.npmjs.com/package/react-confetti</a> <br></br>
+<br></br>
+Datepicker Component: <br></br>
+<a href="https://www.youtube.com/watch?v=tojwQEdI-QI"> https://www.youtube.com/watch?v=tojwQEdI-QI </a><br></br>
+<a href="https://www.npmjs.com/package/react-datepicker">https://www.npmjs.com/package/react-datepicker </a><br></br>
+<br></br>
+Colorpicker Component: <br></br>
+<a href="https://www.youtube.com/watch?v=eaLkOHms9x8">https://www.youtube.com/watch?v=eaLkOHms9x8 </a><br></br>
+<a href="https://github.com/casesandberg/react-color/issues/522">https://github.com/casesandberg/react-color/issues/522 </a><br></br>
+<br></br>
+Basic Todo App setup and function ideas:<br></br>
+I followed a similar folder structure to this tutorial. I used some basic backbones of several functional components to build a much different to do list both in design and functionality. There were 3 hooks structures I was inspired by to aid in adding, deleting, and updating tasks as well as marking tasks done. In addition, I liked how he used Font Awesome for some of the buttons and I incorporated other Font Awesome icons as well to suit the needs of my To do list<br></br>
+<a href="https://www.youtube.com/watch?v=TmDNBEdHzVs">https://www.youtube.com/watch?v=TmDNBEdHzVs</a><br></br>
+I utilized the following to make a  subtask component and how to tie that in together with the form-focused application I was working with. Most importantly how to allow subtasks to be edited and deleted<br></br>
+<a href="https://codesandbox.io/s/zm7dl?file=/src/Item.js:318-426">https://codesandbox.io/s/zm7dl?file=/src/Item.js:318-426</a><br></br>
+I was inspired by Microsoft’s To-do app, especially the sidebar. This is what influenced the structural component of my design. I did not analyze the code for their site.
+<a href="https://to-do.office.com/">https://to-do.office.com/</a><br></br>
+I looked to several stack overflow questions to understand how to map the to-do list to screen and filter based task actions<br></br>
+<a href="https://stackoverflow.com/questions/67832170/how-can-i-delete-a-todo-task-while-making-a-todo-app-using-filter-method-in-react">https://stackoverflow.com/questions/67832170/how-can-i-delete-a-todo-task-while-making-a-todo-app-using-filter-method-in-react</a><br></br>
+<a href="https://stackoverflow.com/questions/73993705/filtering-a-todo-list-based-on-button-clicked-on-react">https://stackoverflow.com/questions/73993705/filtering-a-todo-list-based-on-button-clicked-on-react</a><br></br>
+<br></br>
+- Array splicing needed for subtasks: <br></br><a href="https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript">https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array-in-javascript</a><br></br>
+
+- Mapping and filtering 2d arrays:<br></br>
+<a href="https://stackoverflow.com/questions/7848004/get-column-from-a-two-dimensional-array">https://stackoverflow.com/questions/7848004/get-column-from-a-two-dimensional-array</a><br></br>
+<a href="https://stackoverflow.com/questions/55666572/filtering-2d-arrays-using-javascript">https://stackoverflow.com/questions/55666572/filtering-2d-arrays-using-javascript</a><br></br>
+<br></br>
+- React-Bootstrap Components:<br></br>
+<a href="https://react-bootstrap.github.io/components/accordion/">https://react-bootstrap.github.io/components/accordion/</a><br></br>
+<a href="https://react-bootstrap.github.io/forms/overview/">https://react-bootstrap.github.io/forms/overview/</a><br></br>
+<a href="https://react-bootstrap.github.io/components/buttons/">https://react-bootstrap.github.io/components/buttons/</a><br></br>
+<a href="https://react-bootstrap.github.io/forms/form-control/">https://react-bootstrap.github.io/forms/form-control/</a><br></br>
+<br></br>
+- Condition ClassNames:<br></br>
+<a href="https://www.pluralsight.com/guides/applying-classes-conditionally-react">https://www.pluralsight.com/guides/applying-classes-conditionally-react</a><br></br>
+<br></br>
+- React Hooks:<br></br>
+<a href="https://usehooks.com/useToggle/">https://usehooks.com/useToggle/</a><br></br>
+<a href="https://stackoverflow.com/questions/57212032/how-to-avoid-react-hook-usestate-to-share-the-states">https://stackoverflow.com/questions/57212032/how-to-avoid-react-hook-usestate-to-share-the-states</a><br></br>
+<a href="https://www.youtube.com/watch?v=nmLhEj2IZH4">https://www.youtube.com/watch?v=nmLhEj2IZH4</a><br></br>
+<a href="https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js" text-decoration="none">https://stackoverflow.com/questions/65214950/how-to-disappear-alert-after-5-seconds-in-react-js</a><br></br>
+<br></br>
+Font Awesome for icons<br></br>
+<a href="https://fontawesome.com">https://fontawesome.com</a>
+</div>
+
+
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
