@@ -1,0 +1,143 @@
+:root {
+--lavender-floral: #B791EAff;
+--tropical-indigo: #958BE2ff;
+--vista-blue: #A2A3E6ff;
+--savoy-blue: #4663C4ff;
+--space-cadet: #242853ff;
+}
+
+body {
+  background-image: url("purplebackgrond.jpg");
+  background-size: 1500px;
+  border: wrap 2px solid;
+}
+
+.App {
+  text-align: center;
+ justify-content: center;
+}
+
+.taskBg {
+  background-color: var(--vista-blue);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px 140px 10px 15px !important;
+  text-align: left;
+  font-size: 22px;
+  position: relative;
+  color: var(--space-cadet);
+}
+
+.taskBg div {
+  display: flex;
+  align-items: center;
+  border-bottom: black;
+    font-size: 15px;
+    
+}
+
+.taskNumber {
+  color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.datePicker {
+  width: 100%;
+}
+
+.taskBg .done .taskText {
+  text-decoration: line-through;
+  opacity: 0.3;
+  flex: 1;
+}
+task box scale to fit word
+.taskBg .taskText {
+  flex: 1;
+}
+
+.taskBg .done .taskText {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.taskBg .taskDate{
+  margin-left:auto;
+    border: 3px solid green;
+}
+.taskBg .hideTaskDate {
+  visibility: hidden;
+}
+
+.taskBg .urgent{
+  border:red;
+}
+
+.taskBg .wrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  width:auto;
+  display: inline-block;
+}
+
+.taskBg .wrap span {
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+  color: purple;
+}
+
+.taskBg .wrap .green:hover {
+  color: green;
+}
+.taskBg .wrap .yellow:hover {
+  color: yellow;
+}
+.taskBg .wrap .red:hover {
+  color: red;
+}
+
+.inputToDo{
+  display: flex;
+  /* gap: 2%; */
+}
+
+.isExpanded{
+  display: flex;
+}
+.sidebar {
+  background-color: var(--tropical-indigo);
+  min-height: 100%;
+  border-radius: 10px;
+  padding: 10px 0px 400px 0px;
+  vertical-align: text-top;
+  opacity: 80%;
+}
+
+.pretty {
+  background-color: var(--savoy-blue) !important;
+  font-family: 'Manrope', sans-serif !important;
+  text-align: left;
+  color: white !important;
+}
+
+.font {
+  font-family: 'Gloock', serif;
+  font-size: 86px;
+}
+
+.emptytask{
+  font-family: 'Manrope',
+    sans-serif;
+  font-size: 35px;
+}
