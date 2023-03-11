@@ -27,6 +27,8 @@ function App() {
   const [currentColor, setCurrentColor] = useState("#fff");
   const [currentColor2, setCurrentColor2] = useState("fff");
   const [showConfetti, setShowConfetti] = useState(false);
+  const [urgency,setUrgency] = useState(0);
+  var [currentDate,setCurrentDate] = useState(new Date());
 
   const useToggle = (initialState=false) => {
     const [state, setState] = useState(initialState);
@@ -35,6 +37,17 @@ function App() {
   }
   //toggle sidebar
   const [isExpanded, setIsExpanded] = useToggle();
+
+  useEffect(() => {
+    var timer = setInterval(()=> {
+      setCurrentDate(new Date())
+    }, 1000 )
+
+    return () => {
+      clearInterval(timer);
+    }
+
+});
 
   // add a subtask to task
   const addSubtask = (taskIndex) => {
@@ -55,6 +68,7 @@ function App() {
     if(newTask) {
       let num = toDo.length + 1;
       let newEntry = { id: num, title: newTask, status: false, dateSelect: date, background: `${currentColor}`, subtask: []};
+      findDifference(date);
       setToDo([...toDo, newEntry]);
       //clear temp state
       setNewTask('');
@@ -130,6 +144,17 @@ function App() {
     setIsExpanded(); 
   }
 
+  const findDifference = (dateSelect) => {
+    setUrgency(null);
+    let dateToday = new Date();
+    let difference = dateSelect.getTime() - Date.parse(currentDate.toLocaleDateString()); 
+    // - currentDate.getTime();
+    let total = Math.ceil(difference / (1000*3600*24));
+    setUrgency(total);
+    // console.log(Date.parse(currentDate.toLocaleDateString()));
+    console.log(total);
+  }
+
   return (
     
     <div className="container App">
@@ -149,7 +174,7 @@ function App() {
     </div>
     <Row>
     <Col>
-      <ToDoList toDo={toDo} setIsExpanded={setIsExpanded} isExpanded={isExpanded} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} setIndex={setIndex} date={date} currentColor={currentColor} setCurrentColor={setCurrentColor}/>
+      <ToDoList toDo={toDo} setIsExpanded={setIsExpanded} isExpanded={isExpanded} markDone={markDone} setUpdateData={setUpdateData} deleteTask={deleteTask} setIndex={setIndex} date={date} currentColor={currentColor} setCurrentColor={setCurrentColor} findDifference={findDifference} urgency={urgency} currentDate={currentDate}/>
     </Col>
     {!isExpanded ? null : (
       <Col>

@@ -70,7 +70,11 @@ task box scale to fit word
 
 .backgroundTask .taskDate{
   margin-left:auto;
-    border: 3px solid green;
+  border: 3px solid green;
+}
+.backgroundTask .urgentDate{
+  margin-left: auto;
+    border: 3px solid red;
 }
 .backgroundTask .hideTaskDate {
   visibility: hidden;

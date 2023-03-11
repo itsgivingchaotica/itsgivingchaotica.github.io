@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import DueDate from './DueDate.jsx'
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,6 +10,9 @@ import {
 import '../App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
+//my problem is: how do i change the color of the outline for the date object for the task only for one. 
+//basically i'll change the state of the object and i'm using useEffect to constantly update the time and date in app. can access this thru currentDate
+
 const ToDoList = ({ 
   toDo, 
   setIsExpanded, 
@@ -17,8 +21,12 @@ const ToDoList = ({
   deleteTask, 
   setIndex, 
   date, 
-  isExpanded
+  isExpanded,
+  urgency,
+  currentDate
 }) => {
+
+  console.log(urgency);
 
     return(
     <>
@@ -36,8 +44,12 @@ const ToDoList = ({
             <div className = {task.status ? 'done' : ''}>
               <span className="taskNumber">{index+1}</span>
               <span className="taskText">{task.title}</span>
-              <span className={isExpanded ? "hideTaskDate" : "taskDate"}>
-              {task.dateSelect.toString().substring(0,10)}</span>
+              {urgency && (urgency < 3) ? (<span className={isExpanded ? "hideTaskDate" : "urgentDate"}>
+              {task.dateSelect.toString().substring(0,10)}</span> ) : (<span className={isExpanded ? "hideTaskDate" : "taskDate"}>
+              {task.dateSelect.toString().substring(0,10)}</span>)}
+              
+              {/* <DueDate /> */}
+              
             </div>
             <div className="wrap">
               <span className = "green" onClick={ (e) => markDone(task.id)}>

@@ -20,7 +20,9 @@ const AddTaskForm = ({
   setDate, 
   currentColor, 
   setCurrentColor, 
-  isExpanded 
+  isExpanded,
+  currentDate,
+  findDifference 
 }) => {
 
     return(
@@ -32,7 +34,7 @@ const AddTaskForm = ({
       <Form.Control className="glow" placeholder="Add task, queen :) " value={newTask} onChange={(e) => setNewTask( e.target.value)}/>
       <Button variant="success">
           <span>
-                <FontAwesomeIcon icon={faSquarePlus} onClick={() => addTask()}/>
+                <FontAwesomeIcon icon={faSquarePlus} onClick={() => {addTask(date, currentDate)}}/>
           </span>
         </Button>
         <DatePicker 
